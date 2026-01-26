@@ -3,7 +3,7 @@ import { List, X } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-export default function Navbar({ onOpenWaitlist }: { onOpenWaitlist: () => void }) {
+export default function Navbar({ onOpenWaitlist, onOpenVendorWaitlist }: { onOpenWaitlist: () => void; onOpenVendorWaitlist: () => void }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -63,7 +63,7 @@ export default function Navbar({ onOpenWaitlist }: { onOpenWaitlist: () => void 
                             Try Now
                         </button>
                         <button
-                            onClick={() => navigate('/vendor')}
+                            onClick={onOpenVendorWaitlist}
                             className="px-5 py-2 bg-transparent border border-white/20 text-white text-sm font-bold rounded-full hover:bg-white/10 transition-colors"
                         >
                             For Vendors
