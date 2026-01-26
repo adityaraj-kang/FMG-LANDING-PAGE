@@ -111,7 +111,7 @@ export default function InteractiveDemo() {
                         </div>
 
                         {/* Screen Content (Behind Frame) */}
-                        <div className="absolute top-[2.3%] left-[3.5%] right-[3.5%] bottom-[2.3%] bg-zinc-950 rounded-[45px] overflow-hidden z-10 flex flex-col">
+                        <div className="absolute top-[2.3%] left-[3.5%] right-[3.5%] bottom-[2.3%] bg-zinc-950 rounded-[45px] overflow-hidden z-10 flex flex-col" style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}>
 
                             {/* Map Background Layer - Always Visible */}
                             <div className="absolute inset-0 z-0 bg-zinc-900">
