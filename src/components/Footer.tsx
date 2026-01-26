@@ -1,4 +1,5 @@
 import { ArrowRight, TwitterLogo, InstagramLogo, LinkedinLogo, ArrowUpRight } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
 
 export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void }) {
     return (
@@ -7,7 +8,7 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
             {/* Background Glow */}
             <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
 
                 {/* Final CTA - GPT Warmth */}
                 <div className="pt-12 pb-36 text-center border-b border-white/10 relative">
@@ -57,9 +58,9 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
                         <div className="text-white/40 text-sm font-mono uppercase tracking-widest">Explore</div>
                         <ul className="space-y-3">
                             {[
-                                { name: 'The Problem', href: '#problem' },
-                                { name: 'Live Demo', href: '#demo' },
-                                { name: 'How It Works', href: '#how-it-works' }
+                                { name: 'The Problem', href: '/#problem' },
+                                { name: 'Live Demo', href: '/#demo' },
+                                { name: 'How It Works', href: '/#how-it-works' }
                             ].map(item => (
                                 <li key={item.name}>
                                     <a
@@ -79,17 +80,27 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
                         <div className="text-white/40 text-sm font-mono uppercase tracking-widest">Company</div>
                         <ul className="space-y-3">
                             {[
-                                { name: 'About', href: '#' },
-                                { name: 'Legal', href: '#' },
+                                { name: 'About', href: '/about' },
+                                { name: 'Legal', href: '/legal' },
                                 { name: 'Contact', href: 'mailto:info@findmygenie.com' }
                             ].map(item => (
                                 <li key={item.name}>
-                                    <a
-                                        href={item.href}
-                                        className="text-white font-bold text-lg hover:text-primary cursor-pointer flex items-center justify-between group"
-                                    >
-                                        {item.name} <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    </a>
+                                    {item.href.startsWith('/') ? (
+                                        <Link
+                                            to={item.href}
+                                            className="text-white font-bold text-lg hover:text-primary cursor-pointer flex items-center justify-between group"
+                                        >
+                                            {item.name}
+                                            <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        </Link>
+                                    ) : (
+                                        <a
+                                            href={item.href}
+                                            className="text-white font-bold text-lg hover:text-primary cursor-pointer flex items-center justify-between group"
+                                        >
+                                            {item.name} <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        </a>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -113,9 +124,9 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
 
                 </div>
 
-                <div className="flex justify-between items-center pt-8 border-t border-white/5 text-white/20 text-xs font-mono uppercase">
-                    <div>© 2026 Find My Genie Inc. All rights reserved.</div>
-                    <div>Built with love and a little bit of magic.</div>
+                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-white/20 text-xs font-mono uppercase gap-4 md:gap-0">
+                    <div className="text-center md:text-left">© 2026 Find My Genie Inc. All rights reserved.</div>
+                    <div className="text-center md:text-right">Built with love and a little bit of magic.</div>
                 </div>
 
             </div>

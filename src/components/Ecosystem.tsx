@@ -4,7 +4,7 @@ import { Microphone, Crosshair } from '@phosphor-icons/react';
 export default function Ecosystem() {
     return (
         <section id="ecosystem" className="py-32 bg-background border-t border-white/5 relative">
-            <div className="container mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-4 md:px-6">
 
                 <div className="text-center mb-24 relative z-10">
                     <h2 className="text-4xl md:text-7xl font-black text-white mb-8 font-display tracking-tight leading-none px-4">

@@ -3,6 +3,7 @@ import { ArrowRight, Microphone, X } from '@phosphor-icons/react';
 import { useConversation } from '@elevenlabs/react';
 import { useState, useCallback, useEffect } from 'react';
 
+
 // Fluid Orb Component - "Living Liquid Spirit"
 const FluidOrb = ({ active }: { active: boolean }) => {
     return (
@@ -67,7 +68,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
     );
 };
 
-// Service Floater Component Removed
+
 
 const prompts = [
     "Ask your Genie",
@@ -87,7 +88,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
             setError(null);
         },
         onDisconnect: () => setStatus('idle'),
-        onMessage: (message) => console.log('Message:', message),
+        onMessage: (message) => { },
         onError: (error) => {
             console.error('Error:', error);
             setStatus('idle');
@@ -140,13 +141,13 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
     }, [status]);
 
     return (
-        <section className="relative min-h-[100dvh] lg:h-screen lg:min-h-[800px] flex items-center bg-background overflow-hidden font-sans py-20 lg:py-0">
+        <section className="relative min-h-[100dvh] lg:h-screen lg:min-h-[800px] flex items-center bg-background overflow-hidden font-sans pt-36 pb-20 lg:py-0">
             {/* Aurora Ambient Background */}
             <div className="absolute inset-0 z-0 aurora-bg opacity-40"></div>
 
 
 
-            <div className="container mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
 
                 {/* Left: Content */}
                 <div className="lg:col-span-7">
@@ -171,9 +172,6 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                             >
                                 Try Now
                                 <ArrowRight weight="bold" className="group-hover:translate-x-1 transition-transform" />
-                            </button>
-                            <button className="px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-colors">
-                                For Vendors
                             </button>
                         </div>
                     </motion.div>

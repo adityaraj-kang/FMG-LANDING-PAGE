@@ -3,7 +3,7 @@ import { Microphone, Circuitry, CheckCircle } from '@phosphor-icons/react';
 export default function SolutionFlow() {
     return (
         <section id="how-it-works" className="py-24 bg-zinc-950 border-y border-white/5">
-            <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-7xl mx-auto px-4 md:px-6">
 
                 <div className="text-xs font-bold text-white/40 uppercase tracking-widest mb-12">How it Works</div>
 

@@ -6,9 +6,25 @@ interface WaitlistFormProps {
     isOpen: boolean;
     onClose: () => void;
     googleScriptUrl?: string; // Optional for now, will be required
+    title?: string;
+    description?: string;
+    successMessage?: {
+        title: string;
+        description: string;
+    };
 }
 
-export default function WaitlistForm({ isOpen, onClose, googleScriptUrl }: WaitlistFormProps) {
+export default function WaitlistForm({
+    isOpen,
+    onClose,
+    googleScriptUrl,
+    title = "Join the Waitlist",
+    description = "Our agents are currently busy. Leave your details and we'll have a human or AI get back to you ASAP.",
+    successMessage = {
+        title: "You're on the list!",
+        description: "We'll be in touch shortly."
+    }
+}: WaitlistFormProps) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -95,15 +111,15 @@ export default function WaitlistForm({ isOpen, onClose, googleScriptUrl }: Waitl
                                     <div className="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mb-2">
                                         <CheckCircle size={32} weight="fill" />
                                     </div>
-                                    <h3 className="text-2xl font-semibold text-white">You're on the list!</h3>
-                                    <p className="text-white/60">We'll be in touch shortly.</p>
+                                    <h3 className="text-2xl font-semibold text-white">{successMessage.title}</h3>
+                                    <p className="text-white/60">{successMessage.description}</p>
                                 </div>
                             ) : (
                                 <>
                                     <div className="mb-8">
-                                        <h3 className="text-2xl font-semibold text-white mb-2">Join the Waitlist</h3>
+                                        <h3 className="text-2xl font-semibold text-white mb-2">{title}</h3>
                                         <p className="text-white/60 text-sm">
-                                            Our agents are currently busy. Leave your details and we'll have a human or AI get back to you ASAP.
+                                            {description}
                                         </p>
                                     </div>
 

@@ -86,7 +86,7 @@ export default function InteractiveDemo() {
 
     return (
         <section id="demo" className="py-32 bg-background border-t border-white/5 relative overflow-hidden">
-            <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-16 items-center">
 
                 {/* Left: Copy */}
                 <div>
@@ -103,7 +103,7 @@ export default function InteractiveDemo() {
                 {/* Right: Demo UI */}
                 <div className="relative">
                     {/* Real iPhone Mockup Container */}
-                    <div className="relative mx-auto max-w-[360px]">
+                    <div className="relative mx-auto max-w-[360px] scale-[0.85] origin-center">
 
                         {/* Frame (Top Layer) */}
                         <div className="relative z-30 pointer-events-none">

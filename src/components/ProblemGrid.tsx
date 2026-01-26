@@ -3,7 +3,7 @@ import { Warning, SpeakerSlash, MagnifyingGlass, CurrencyDollar } from '@phospho
 export default function ProblemGrid() {
     return (
         <section id="problem" className="py-32 bg-background">
-            <div className="container mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-4 md:px-6">
 
                 <div className="grid lg:grid-cols-2 gap-12 mb-20 items-end">
                     <h2 className="text-3xl md:text-4xl lg:text-6xl font-black text-white tracking-tight leading-none font-display">
