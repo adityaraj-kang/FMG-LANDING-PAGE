@@ -20,7 +20,8 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0.3
                 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-[200px] h-[200px] bg-indigo-600/60 rounded-full blur-[60px] mix-blend-screen"
+                className="absolute w-[200px] h-[200px] rounded-full blur-[60px] mix-blend-screen"
+                style={{ background: 'radial-gradient(circle, rgba(79, 70, 229, 0.6) 0%, transparent 70%)' }}
             />
 
             {/* Layer 2: Primary Energy (Orange/Red) - Faster, main character */}
@@ -35,7 +36,8 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0
                 }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-[170px] h-[170px] bg-orange-500/80 rounded-full blur-[50px] mix-blend-screen"
+                className="absolute w-[170px] h-[170px] rounded-full blur-[50px] mix-blend-screen"
+                style={{ background: 'radial-gradient(circle, rgba(249, 115, 22, 0.8) 0%, transparent 70%)' }}
             />
 
             {/* Layer 3: Highlights (White/Cyan) - Fast, nervous energy, gives it "spirit" */}
@@ -50,7 +52,8 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0
                 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-[135px] h-[135px] bg-cyan-300/40 rounded-full blur-[40px] mix-blend-overlay"
+                className="absolute w-[135px] h-[135px] rounded-full blur-[40px] mix-blend-overlay"
+                style={{ background: 'radial-gradient(circle, rgba(103, 232, 249, 0.4) 0%, transparent 70%)' }}
             />
 
             {/* Layer 4: Reactive Glow Pulse */}
@@ -62,7 +65,8 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0
                 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-[270px] h-[270px] bg-white/10 rounded-full blur-[80px]"
+                className="absolute w-[270px] h-[270px] rounded-full blur-[80px]"
+                style={{ background: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)' }}
             />
         </div>
     );
