@@ -16,7 +16,7 @@ export default function SolutionFlow() {
                             <Microphone size={28} weight="fill" />
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-2 relative z-10">You Ask</h3>
-                        <p className="text-white/100 text-sm relative z-10">Tell us what you need in plain English.</p>
+                        <p className="text-zinc-300 text-sm relative z-10">Tell us what you need in plain English.</p>
                     </div>
 
                     {/* Step 2 */}
@@ -26,7 +26,7 @@ export default function SolutionFlow() {
                             <Circuitry size={28} weight="fill" />
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-2 relative z-10">We Match</h3>
-                        <p className="text-white/100 text-sm relative z-10">Our AI instantly finds the perfect local expert.</p>
+                        <p className="text-zinc-300 text-sm relative z-10">Our AI instantly finds the perfect local expert.</p>
                     </div>
 
                     {/* Step 3 */}
@@ -36,7 +36,7 @@ export default function SolutionFlow() {
                             <CheckCircle size={28} weight="fill" />
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-2 relative z-10">Pro Arrives</h3>
-                        <p className="text-white/100 text-sm relative z-10">Verified help is on the way in minutes.</p>
+                        <p className="text-zinc-300 text-sm relative z-10">Verified help is on the way in minutes.</p>
                     </div>
 
                 </div>
