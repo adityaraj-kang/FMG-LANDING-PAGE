@@ -61,9 +61,9 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
 
-                        <h1 className="text-fluid-heading font-semibold text-white mb-8 tracking-tight leading-[1.1]">
+                        <h1 className="text-6xl md:text-9xl font-black text-white mb-12 tracking-tight leading-tight">
                             Let AI call-around<br />
-                            <span className="text-white/30">
+                            <span className="text-white/70 hover:text-primary transition-colors duration-500 cursor-default">
                                 for your needs.
                             </span>
                         </h1>
