@@ -63,7 +63,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
 
                         <h1 className="text-fluid-heading font-semibold text-white mb-8 tracking-tight leading-[1.1]">
                             Let AI call-around<br />
-                            <span className="text-white/30">
+                            <span className="text-white/70">
                                 for your needs.
                             </span>
                         </h1>
