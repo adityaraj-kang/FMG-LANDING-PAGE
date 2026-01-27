@@ -28,7 +28,7 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
                 <div className="mb-24">
                     <h2 className="text-6xl md:text-9xl font-black text-white tracking-tight leading-tight mb-12 font-display">
                         Ready to get <br />
-                        <span className="text-white/40 hover:text-primary transition-colors duration-500 cursor-default">help in minutes?</span>
+                        <span className="text-white/70 hover:text-primary transition-colors duration-500 cursor-default">help in minutes?</span>
                     </h2>
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                         <button
@@ -49,13 +49,13 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
                         </div>
                         <div>
                             <div className="text-white font-bold text-lg">Find My Genie</div>
-                            <div className="text-white/40 text-sm">Let AI call-around for you.</div>
+                            <div className="text-zinc-400 text-sm">Let AI call-around for you.</div>
                         </div>
                     </div>
 
                     {/* Link Block 1 */}
                     <div className="bg-zinc-950 border border-white/10 rounded-3xl p-8 flex flex-col justify-between h-64 hover:bg-white/5 transition-colors">
-                        <div className="text-white/40 text-sm font-mono uppercase tracking-widest">Explore</div>
+                        <div className="text-zinc-400 text-sm font-mono uppercase tracking-widest">Explore</div>
                         <ul className="space-y-3">
                             {[
                                 { name: 'The Problem', href: '/#problem' },
@@ -77,7 +77,7 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
 
                     {/* Link Block 2 */}
                     <div className="bg-zinc-950 border border-white/10 rounded-3xl p-8 flex flex-col justify-between h-64 hover:bg-white/5 transition-colors">
-                        <div className="text-white/40 text-sm font-mono uppercase tracking-widest">Company</div>
+                        <div className="text-zinc-400 text-sm font-mono uppercase tracking-widest">Company</div>
                         <ul className="space-y-3">
                             {[
                                 { name: 'About', href: '/about' },
@@ -108,7 +108,7 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
 
                     {/* Socials Block */}
                     <div className="bg-zinc-950 border border-white/10 rounded-3xl p-8 flex flex-col justify-between h-64 hover:border-primary/50 transition-colors">
-                        <div className="text-white/40 text-sm font-mono uppercase tracking-widest">Follow Us</div>
+                        <div className="text-zinc-400 text-sm font-mono uppercase tracking-widest">Follow Us</div>
                         <div className="flex gap-4">
                             <a href="#" aria-label="Follow us on Twitter" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors cursor-pointer">
                                 <TwitterLogo size={24} />
@@ -124,7 +124,7 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
 
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-white/40 text-xs font-mono uppercase gap-4 md:gap-0">
+                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-zinc-400 text-xs font-mono uppercase gap-4 md:gap-0">
                     <div className="text-center md:text-left">© 2026 Find My Genie Inc. All rights reserved.</div>
                     <div className="text-center md:text-right">Built with love and a little bit of magic.</div>
                 </div>

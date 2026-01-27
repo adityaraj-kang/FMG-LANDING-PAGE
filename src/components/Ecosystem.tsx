@@ -9,7 +9,7 @@ export default function Ecosystem() {
                 <div className="text-center mb-24 relative z-10">
                     <h2 className="text-4xl md:text-7xl font-black text-white mb-8 font-display tracking-tight leading-none px-4">
                         Made for humans. <br />
-                        <span className="text-white/30">Built on trust.</span>
+                        <span className="text-white/70">Built on trust.</span>
                     </h2>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-primary font-mono text-xs tracking-widest uppercase text-center">
                         <Crosshair size={16} weight="bold" className="hidden sm:block" />
@@ -31,7 +31,7 @@ export default function Ecosystem() {
                                 <Microphone size={28} weight="fill" />
                             </div>
                             <h3 className="text-4xl font-black text-white mb-2 font-display tracking-tight">Just Ask.</h3>
-                            <p className="text-white/40 text-lg font-mono">Say what you need — we’ll handle the rest.</p>
+                            <p className="text-zinc-400 text-lg font-mono">Say what you need — we’ll handle the rest.</p>
                         </div>
 
                         <div className="relative z-10 mt-12 bg-zinc-950 border border-white/10 rounded-2xl p-6 shadow-2xl">

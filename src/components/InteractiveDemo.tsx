@@ -93,7 +93,7 @@ export default function InteractiveDemo() {
 
                     <h2 className="text-4xl md:text-6xl font-black text-white mb-6 font-display tracking-tight leading-none">
                         Talk to the <br />
-                        <span className="text-white/30">Network.</span>
+                        <span className="text-white/70">Network.</span>
                     </h2>
                     <p className="text-white/60 text-lg max-w-md leading-relaxed">
                         Experience instant natural-language dispatch. Just type your request like you’re texting a friend.
@@ -195,7 +195,7 @@ export default function InteractiveDemo() {
                                             value={inputValue}
                                             readOnly
                                             placeholder="Ask Genie"
-                                            className="flex-1 bg-transparent border-none py-2 px-4 text-white focus:outline-none placeholder:text-white/30 text-[14px] font-medium"
+                                            className="flex-1 bg-transparent border-none py-2 px-4 text-white focus:outline-none placeholder:text-zinc-500 text-[14px] font-medium"
                                         />
                                         <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors cursor-pointer">
                                             <Microphone size={16} weight="fill" />
