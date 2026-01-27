@@ -20,7 +20,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0.3
                 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-48 h-48 bg-indigo-600/60 rounded-full blur-[60px] mix-blend-screen"
+                className="absolute w-[200px] h-[200px] bg-indigo-600/60 rounded-full blur-[60px] mix-blend-screen"
             />
 
             {/* Layer 2: Primary Energy (Orange/Red) - Faster, main character */}
@@ -35,7 +35,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0
                 }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-40 h-40 bg-orange-500/80 rounded-full blur-[50px] mix-blend-screen"
+                className="absolute w-[170px] h-[170px] bg-orange-500/80 rounded-full blur-[50px] mix-blend-screen"
             />
 
             {/* Layer 3: Highlights (White/Cyan) - Fast, nervous energy, gives it "spirit" */}
@@ -50,7 +50,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0
                 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-32 h-32 bg-cyan-300/40 rounded-full blur-[40px] mix-blend-overlay"
+                className="absolute w-[135px] h-[135px] bg-cyan-300/40 rounded-full blur-[40px] mix-blend-overlay"
             />
 
             {/* Layer 4: Reactive Glow Pulse */}
@@ -62,7 +62,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0
                 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-64 h-64 bg-white/10 rounded-full blur-[80px]"
+                className="absolute w-[270px] h-[270px] bg-white/10 rounded-full blur-[80px]"
             />
         </div>
     );
