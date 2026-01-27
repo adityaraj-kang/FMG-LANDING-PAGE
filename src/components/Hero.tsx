@@ -136,6 +136,15 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
 
 
 
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = useCallback((e: React.MouseEvent) => {
+        const { clientX, clientY } = e;
+        const x = (clientX / window.innerWidth - 0.5) * 20; // -10 to 10
+        const y = (clientY / window.innerHeight - 0.5) * 20; // -10 to 10
+        setMousePosition({ x, y });
+    }, []);
+
     useEffect(() => {
         if (status !== 'idle') return;
         const interval = setInterval(() => {
@@ -145,9 +154,16 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
     }, [status]);
 
     return (
-        <section className="relative min-h-[100dvh] lg:h-screen lg:min-h-[800px] flex items-center bg-background overflow-hidden font-sans pt-36 pb-20 lg:py-0">
+        <section
+            onMouseMove={handleMouseMove}
+            className="relative min-h-[100dvh] lg:h-screen lg:min-h-[800px] flex items-center bg-background overflow-hidden font-sans pt-36 pb-20 lg:py-0"
+        >
             {/* Aurora Ambient Background */}
-            <div className="absolute inset-0 z-0 aurora-bg opacity-40"></div>
+            <motion.div
+                animate={{ x: mousePosition.x * -1, y: mousePosition.y * -1 }}
+                transition={{ type: "spring", stiffness: 50, damping: 20 }}
+                className="absolute inset-0 z-0 aurora-bg opacity-40"
+            ></motion.div>
 
 
 
@@ -161,9 +177,26 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
 
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-semibold text-white mb-8 tracking-tight leading-[1.1]">
-                            Let AI call-around <br />
-                            <span className="text-white/30">for your needs.</span>
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-semibold text-white mb-8 tracking-tight leading-[1.1] overflow-hidden">
+                            {"Let AI call-around".split(" ").map((word, i) => (
+                                <motion.span
+                                    key={i}
+                                    initial={{ y: 50, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                                    className="inline-block mr-4"
+                                >
+                                    {word}
+                                </motion.span>
+                            ))}<br />
+                            <motion.span
+                                initial={{ y: 50, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                                className="text-white/30 inline-block"
+                            >
+                                for your needs.
+                            </motion.span>
                         </h1>
                         <p className="text-xl md:text-2xl text-white/60 mb-12 max-w-lg leading-relaxed font-normal tracking-tight">
                             AI agent who calls 20+ places near you to find availability, quote and also negotiate with multiple vendors simultaneously to get you the best deal.
