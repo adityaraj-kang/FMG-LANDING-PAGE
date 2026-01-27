@@ -51,22 +51,31 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
 
 
 
-            <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-12 gap-y-12 items-center mt-20 md:mt-0">
 
-                {/* Left: Content */}
-                <div className="lg:col-span-8">
+                {/* Top: Full Width Heading */}
+                <div className="lg:col-span-12">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
-
-                        <h1 className="text-6xl md:text-9xl font-black text-white mb-12 tracking-tight leading-tight">
+                        <h1 className="text-6xl md:text-9xl font-black text-white mb-8 tracking-tight leading-tight">
                             Let AI call-around<br />
                             <span className="text-white/70 hover:text-primary transition-colors duration-500 cursor-default">
                                 for your needs.
                             </span>
                         </h1>
+                    </motion.div>
+                </div>
+
+                {/* Left: Sub-content */}
+                <div className="lg:col-span-7">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                    >
                         <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-lg leading-relaxed font-normal tracking-tight">
                             AI agent who calls 20+ places near you to find availability, quote and also negotiate with multiple vendors simultaneously to get you the best deal.
                         </p>
@@ -85,7 +94,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                 </div>
 
                 {/* Right: "Apple x Uber x GPT" Interface */}
-                <div className="lg:col-span-4 flex justify-center lg:justify-end mt-12 lg:mt-0">
+                <div className="lg:col-span-5 flex justify-center lg:justify-end mt-12 lg:mt-0">
                     <div className="relative w-full max-w-[320px] sm:max-w-md h-[400px] flex items-center justify-center">
 
                         {/* Static Ambient Halo - Always visible to create focus */}
