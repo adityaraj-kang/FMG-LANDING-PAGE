@@ -54,7 +54,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
             <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-12 gap-y-12 items-center mt-20 md:mt-0">
 
                 {/* Top: Full Width Heading */}
-                <div className="lg:col-span-12">
+                <div className="lg:col-span-12 -ml-2 md:-ml-4">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                 </div>
 
                 {/* Left: Sub-content */}
-                <div className="lg:col-span-7">
+                <div className="lg:col-span-7 -ml-2 md:-ml-4">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
