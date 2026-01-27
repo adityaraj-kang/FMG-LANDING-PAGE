@@ -26,6 +26,18 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'framer-motion': ['framer-motion'],
+          'icons': ['lucide-react', '@phosphor-icons/react'],
+          'vendor': ['react', 'react-dom', 'react-router-dom', 'posthog-js'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

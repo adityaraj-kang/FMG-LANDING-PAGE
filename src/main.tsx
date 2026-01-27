@@ -15,8 +15,11 @@ createRoot(document.getElementById('root')!).render(
         options={{
           api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
           defaults: '2025-05-24',
-          capture_exceptions: true, // This enables capturing exceptions using Error Tracking, set to false if you don't want this
+          capture_exceptions: true,
           debug: import.meta.env.MODE === 'development',
+          disable_session_recording: true,
+          disable_surveys: true,
+          autocapture: false,
         }}
       >
         <BrowserRouter>
