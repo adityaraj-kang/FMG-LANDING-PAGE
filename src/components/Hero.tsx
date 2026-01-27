@@ -92,7 +92,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
             setError(null);
         },
         onDisconnect: () => setStatus('idle'),
-        onMessage: (_message) => { },
+        onMessage: () => { },
         onError: (error) => {
             console.error('Error:', error);
             setStatus('idle');
