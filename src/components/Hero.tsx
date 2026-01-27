@@ -20,7 +20,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0.3
                 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-[220px] h-[220px] rounded-full blur-[60px] mix-blend-screen"
+                className="absolute w-[220px] h-[220px] rounded-full blur-[60px] mix-blend-screen will-change-transform"
                 style={{ background: 'radial-gradient(circle, rgba(79, 70, 229, 0.6) 0%, transparent 70%)' }}
             />
 
@@ -36,7 +36,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0
                 }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-[187px] h-[187px] rounded-full blur-[50px] mix-blend-screen"
+                className="absolute w-[187px] h-[187px] rounded-full blur-[50px] mix-blend-screen will-change-transform"
                 style={{ background: 'radial-gradient(circle, rgba(249, 115, 22, 0.8) 0%, transparent 70%)' }}
             />
 
@@ -177,7 +177,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
 
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-semibold text-white mb-8 tracking-tight leading-[1.1] overflow-hidden">
+                        <h1 className="text-fluid-heading font-semibold text-white mb-8 tracking-tight leading-[1.1] overflow-hidden">
                             {"Let AI call-around".split(" ").map((word, i) => (
                                 <motion.span
                                     key={i}
@@ -205,7 +205,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                         <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-lg">
                             <button
                                 onClick={onOpenWaitlist}
-                                className="px-8 py-4 bg-primary text-black font-bold rounded-full hover:bg-white transition-colors flex items-center gap-2 group"
+                                className="px-8 py-4 bg-primary text-black font-bold rounded-full hover:bg-white active:scale-95 transition-all flex items-center gap-2 group"
                             >
                                 Try Now
                                 <ArrowRight weight="bold" className="group-hover:translate-x-1 transition-transform" />
@@ -305,7 +305,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                                 >
                                     <button
                                         onClick={stopConversation}
-                                        className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors backdrop-blur-md cursor-pointer"
+                                        className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 flex items-center justify-center transition-all backdrop-blur-md cursor-pointer"
                                     >
                                         <X size={20} className="text-white" />
                                     </button>
