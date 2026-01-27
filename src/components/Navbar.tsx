@@ -25,6 +25,8 @@ export default function Navbar({ onOpenWaitlist, onOpenVendorWaitlist }: { onOpe
             >
                 {/* Logo */}
                 <div
+                    role="button"
+                    aria-label="Home"
                     className={`flex items-center gap-2 font-bold text-white px-4 cursor-pointer hover:opacity-80 transition-opacity ${isMobileMenuOpen ? 'mb-8' : ''}`}
                     onClick={() => {
                         navigate('/');
@@ -33,7 +35,7 @@ export default function Navbar({ onOpenWaitlist, onOpenVendorWaitlist }: { onOpe
                     }}
                 >
                     <div className="w-8 h-8 flex items-center justify-center">
-                        <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
+                        <img src="/logo.webp" alt="Logo" width="32" height="32" className="w-full h-full object-contain" />
                     </div>
                     <span>Find My Genie</span>
                 </div>
@@ -64,6 +66,7 @@ export default function Navbar({ onOpenWaitlist, onOpenVendorWaitlist }: { onOpe
                         </button>
                         <button
                             onClick={onOpenVendorWaitlist}
+                            data-testid="nav-vendor-button"
                             className="px-5 py-2 bg-transparent border border-white/20 text-white text-sm font-bold rounded-full hover:bg-white/10 active:scale-95 transition-all"
                         >
                             For Vendors
@@ -75,6 +78,8 @@ export default function Navbar({ onOpenWaitlist, onOpenVendorWaitlist }: { onOpe
 
                 {/* Mobile Toggle */}
                 <button
+                    data-testid="mobile-menu-toggle"
+                    aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                     className="md:hidden text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
@@ -104,9 +109,19 @@ export default function Navbar({ onOpenWaitlist, onOpenVendorWaitlist }: { onOpe
                                     setIsMobileMenuOpen(false);
                                     onOpenWaitlist();
                                 }}
-                                className="mt-4 w-full py-4 bg-primary text-black font-bold rounded-xl text-lg"
+                                className="mt-4 w-full py-4 bg-primary text-black font-bold rounded-xl text-lg mb-2"
                             >
                                 Request Access
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setIsMobileMenuOpen(false);
+                                    onOpenVendorWaitlist();
+                                }}
+                                data-testid="mobile-vendor-button"
+                                className="w-full py-4 bg-transparent border border-white/20 text-white font-bold rounded-xl text-lg mb-4"
+                            >
+                                For Vendors
                             </button>
                         </motion.div>
                     )}

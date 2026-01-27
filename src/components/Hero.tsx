@@ -20,8 +20,8 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0.3
                 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-[220px] h-[220px] rounded-full blur-[60px] mix-blend-screen will-change-transform"
-                style={{ background: 'radial-gradient(circle, rgba(79, 70, 229, 0.6) 0%, transparent 70%)' }}
+                className="absolute w-[220px] h-[220px] rounded-full blur-[60px] mix-blend-screen will-change-[transform,opacity]"
+                style={{ background: 'radial-gradient(circle, rgba(79, 70, 229, 0.6) 0%, transparent 70%)', transform: 'translateZ(0)' }}
             />
 
             {/* Layer 2: Primary Energy (Orange/Red) - Faster, main character */}
@@ -36,8 +36,8 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                     opacity: 0
                 }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-[187px] h-[187px] rounded-full blur-[50px] mix-blend-screen will-change-transform"
-                style={{ background: 'radial-gradient(circle, rgba(249, 115, 22, 0.8) 0%, transparent 70%)' }}
+                className="absolute w-[187px] h-[187px] rounded-full blur-[50px] mix-blend-screen will-change-[transform,opacity]"
+                style={{ background: 'radial-gradient(circle, rgba(249, 115, 22, 0.8) 0%, transparent 70%)', transform: 'translateZ(0)' }}
             />
 
             {/* Layer 3: Highlights (White/Cyan) - Fast, nervous energy, gives it "spirit" */}
@@ -162,7 +162,8 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
             <motion.div
                 animate={{ x: mousePosition.x * -1, y: mousePosition.y * -1 }}
                 transition={{ type: "spring", stiffness: 50, damping: 20 }}
-                className="absolute inset-0 z-0 aurora-bg opacity-40"
+                className="absolute inset-0 z-0 aurora-bg opacity-40 will-change-transform"
+                style={{ transform: 'translateZ(0)' }}
             ></motion.div>
 
 
@@ -198,13 +199,14 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                                 for your needs.
                             </motion.span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-white/60 mb-12 max-w-lg leading-relaxed font-normal tracking-tight">
+                        <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-lg leading-relaxed font-normal tracking-tight">
                             AI agent who calls 20+ places near you to find availability, quote and also negotiate with multiple vendors simultaneously to get you the best deal.
                         </p>
                         {/* GPT-Style Prompt Input */}
                         <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-lg">
                             <button
                                 onClick={onOpenWaitlist}
+                                data-testid="hero-waitlist-button"
                                 className="px-8 py-4 bg-primary text-black font-bold rounded-full hover:bg-white active:scale-95 transition-all flex items-center gap-2 group"
                             >
                                 Try Now
@@ -264,6 +266,8 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                                         <motion.button
                                             key="trigger"
                                             onClick={startConversation}
+                                            data-testid="hero-mic-button"
+                                            aria-label="Start voice conversation"
                                             initial={{ scale: 1 }}
                                             animate={{
                                                 scale: [1, 1.05, 1],
@@ -305,6 +309,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                                 >
                                     <button
                                         onClick={stopConversation}
+                                        aria-label="Stop voice conversation"
                                         className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 flex items-center justify-center transition-all backdrop-blur-md cursor-pointer"
                                     >
                                         <X size={20} className="text-white" />

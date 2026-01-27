@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Spinner, CheckCircle, WarningCircle } from '@phosphor-icons/react';
+import { X, CheckCircle } from '@phosphor-icons/react';
+import { toast } from 'sonner';
 
 interface WaitlistFormProps {
     isOpen: boolean;
@@ -30,23 +31,23 @@ export default function WaitlistForm({
         email: '',
         phone: ''
     });
-    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         if (!googleScriptUrl) {
-            setErrorMessage("Configuration Error: Backend URL missing.");
-            setStatus('error');
+            toast.error("Configuration Error: Backend URL missing.");
             return;
         }
 
         setStatus('submitting');
-        setErrorMessage('');
+
+        // Minimum loading time for skeleton effect (800ms)
+        const minLoadTime = new Promise(resolve => setTimeout(resolve, 1500));
 
         try {
-            await fetch(googleScriptUrl, {
+            const request = fetch(googleScriptUrl, {
                 method: 'POST',
                 mode: 'no-cors', // Critical for Google Apps Script Web App
                 headers: {
@@ -58,20 +59,25 @@ export default function WaitlistForm({
                 })
             });
 
+            await Promise.all([request, minLoadTime]);
+
             // Since 'no-cors' doesn't return data, we assume success if no network error thrown
             setStatus('success');
+            toast.success(successMessage.title, {
+                description: successMessage.description
+            });
 
             // Auto close after 2 seconds
             setTimeout(() => {
                 onClose();
                 setStatus('idle');
                 setFormData({ name: '', email: '', phone: '' });
-            }, 3000);
+            }, 2000);
 
         } catch (error) {
             console.error(error);
-            setStatus('error');
-            setErrorMessage('Something went wrong. Please try again.');
+            setStatus('idle');
+            toast.error('Something went wrong. Please try again.');
         }
     };
 
@@ -100,6 +106,7 @@ export default function WaitlistForm({
 
                         <button
                             onClick={onClose}
+                            aria-label="Close form"
                             className="absolute top-4 right-4 p-2 text-white/40 hover:text-white transition-colors rounded-full hover:bg-white/10"
                         >
                             <X size={20} />
@@ -124,60 +131,56 @@ export default function WaitlistForm({
                                     </div>
 
                                     <form onSubmit={handleSubmit} className="space-y-4">
-                                        <div className="space-y-1">
-                                            <input
-                                                type="text"
-                                                required
-                                                placeholder="Full Name"
-                                                value={formData.name}
-                                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
-                                            />
-                                        </div>
-
-                                        <div className="space-y-1">
-                                            <input
-                                                type="email"
-                                                required
-                                                placeholder="Email Address"
-                                                value={formData.email}
-                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
-                                            />
-                                        </div>
-
-                                        <div className="space-y-1">
-                                            <input
-                                                type="tel"
-                                                required
-                                                placeholder="Phone Number"
-                                                value={formData.phone}
-                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
-                                            />
-                                        </div>
-
-                                        {errorMessage && (
-                                            <div className="flex items-center gap-2 text-red-400 text-sm bg-red-400/10 p-3 rounded-lg">
-                                                <WarningCircle size={16} weight="fill" />
-                                                {errorMessage}
+                                        {status === 'submitting' ? (
+                                            <div className="space-y-4 animate-pulse">
+                                                <div className="h-12 bg-white/10 rounded-xl w-full" />
+                                                <div className="h-12 bg-white/10 rounded-xl w-full" />
+                                                <div className="h-12 bg-white/10 rounded-xl w-full" />
+                                                <div className="h-14 bg-white/10 rounded-xl w-full mt-2" />
                                             </div>
-                                        )}
+                                        ) : (
+                                            <>
+                                                <div className="space-y-1">
+                                                    <input
+                                                        type="text"
+                                                        required
+                                                        placeholder="Full Name"
+                                                        value={formData.name}
+                                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
+                                                    />
+                                                </div>
 
-                                        <button
-                                            type="submit"
-                                            disabled={status === 'submitting'}
-                                            className="w-full bg-primary text-black font-bold text-lg rounded-xl py-4 mt-2 hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                                        >
-                                            {status === 'submitting' ? (
-                                                <>
-                                                    <Spinner className="animate-spin" size={20} />
-                                                    Adding...
-                                                </>
-                                            ) : (
-                                                "Join Waitlist"
-                                            )}
-                                        </button>
+                                                <div className="space-y-1">
+                                                    <input
+                                                        type="email"
+                                                        required
+                                                        placeholder="Email Address"
+                                                        value={formData.email}
+                                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
+                                                    />
+                                                </div>
+
+                                                <div className="space-y-1">
+                                                    <input
+                                                        type="tel"
+                                                        required
+                                                        placeholder="Phone Number"
+                                                        value={formData.phone}
+                                                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
+                                                    />
+                                                </div>
+
+                                                <button
+                                                    type="submit"
+                                                    className="w-full bg-primary text-black font-bold text-lg rounded-xl py-4 mt-2 hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                                                >
+                                                    Join Waitlist
+                                                </button>
+                                            </>
+                                        )}
                                     </form>
                                 </>
                             )}

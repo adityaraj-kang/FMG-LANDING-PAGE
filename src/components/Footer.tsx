@@ -28,7 +28,7 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
                 <div className="mb-24">
                     <h2 className="text-6xl md:text-9xl font-black text-white tracking-tight leading-tight mb-12 font-display">
                         Ready to get <br />
-                        <span className="text-white/20 hover:text-primary transition-colors duration-500 cursor-default">help in minutes?</span>
+                        <span className="text-white/40 hover:text-primary transition-colors duration-500 cursor-default">help in minutes?</span>
                     </h2>
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                         <button
@@ -45,7 +45,7 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
                     {/* Brand Block */}
                     <div className="bg-zinc-950 border border-white/10 rounded-3xl p-8 flex flex-col justify-between h-64 hover:border-white/20 transition-colors group">
                         <div className="w-10 h-10 flex items-center justify-center mb-4">
-                            <img src="/logo.png" alt="Logo" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
+                            <img src="/logo.webp" alt="Logo" width="40" height="40" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                         </div>
                         <div>
                             <div className="text-white font-bold text-lg">Find My Genie</div>
@@ -110,13 +110,13 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
                     <div className="bg-zinc-950 border border-white/10 rounded-3xl p-8 flex flex-col justify-between h-64 hover:border-primary/50 transition-colors">
                         <div className="text-white/40 text-sm font-mono uppercase tracking-widest">Follow Us</div>
                         <div className="flex gap-4">
-                            <a href="#" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors cursor-pointer">
+                            <a href="#" aria-label="Follow us on Twitter" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors cursor-pointer">
                                 <TwitterLogo size={24} />
                             </a>
-                            <a href="https://www.instagram.com/findmygenie?igsh=YmV3cTA1MnE2cjB0" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors cursor-pointer">
+                            <a href="https://www.instagram.com/findmygenie?igsh=YmV3cTA1MnE2cjB0" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors cursor-pointer">
                                 <InstagramLogo size={24} />
                             </a>
-                            <a href="https://www.linkedin.com/company/find-my-genie/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors cursor-pointer">
+                            <a href="https://www.linkedin.com/company/find-my-genie/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors cursor-pointer">
                                 <LinkedinLogo size={24} />
                             </a>
                         </div>
@@ -124,7 +124,7 @@ export default function Footer({ onOpenWaitlist }: { onOpenWaitlist: () => void 
 
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-white/20 text-xs font-mono uppercase gap-4 md:gap-0">
+                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-white/40 text-xs font-mono uppercase gap-4 md:gap-0">
                     <div className="text-center md:text-left">© 2026 Find My Genie Inc. All rights reserved.</div>
                     <div className="text-center md:text-right">Built with love and a little bit of magic.</div>
                 </div>

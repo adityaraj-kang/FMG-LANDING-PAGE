@@ -1,0 +1,194 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - navigation:
+      - generic [ref=e4]:
+        - button "Home" [ref=e5] [cursor=pointer]:
+          - img "Logo" [ref=e7]
+          - generic [ref=e8]: Find My Genie
+        - button "Open menu" [ref=e9]:
+          - img [ref=e10]
+    - generic [ref=e14]:
+      - generic [ref=e16]:
+        - heading "Let AI call-around for your needs." [level=1] [ref=e17]:
+          - generic [ref=e18]: Let
+          - generic [ref=e19]: AI
+          - generic [ref=e20]: call-around
+          - generic [ref=e21]: for your needs.
+        - paragraph [ref=e22]: AI agent who calls 20+ places near you to find availability, quote and also negotiate with multiple vendors simultaneously to get you the best deal.
+        - button "Try Now" [ref=e24]:
+          - text: Try Now
+          - img [ref=e25]
+      - generic [ref=e28]:
+        - button "Start voice conversation" [ref=e31] [cursor=pointer]:
+          - img [ref=e33]
+        - generic: Check availability...
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - heading "Stop searching. Start fixing." [level=2] [ref=e38]:
+          - text: Stop searching.
+          - text: Start fixing.
+        - paragraph [ref=e39]: The old way of finding help is broken. You call. You wait. You gamble on quality. We removed the friction completely.
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - img [ref=e43]
+          - heading "Too Many Calls" [level=3] [ref=e45]
+          - paragraph [ref=e46]: Calling 10 different numbers just to get one answer.
+        - generic [ref=e47]:
+          - img [ref=e49]
+          - heading "Long Wait Times" [level=3] [ref=e51]
+          - paragraph [ref=e52]: Waiting days for an estimate that might change.
+        - generic [ref=e53]:
+          - img [ref=e55]
+          - heading "Who to Trust?" [level=3] [ref=e57]
+          - paragraph [ref=e58]: Gambling on unlicensed or unverified strangers.
+        - generic [ref=e59]:
+          - img [ref=e61]
+          - heading "Hidden Costs" [level=3] [ref=e63]
+          - paragraph [ref=e64]: Surprise fees and last-minute price hikes.
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - heading "Talk to the Network." [level=2] [ref=e68]:
+          - text: Talk to the
+          - text: Network.
+        - paragraph [ref=e69]: Experience instant natural-language dispatch. Just type your request like you’re texting a friend.
+      - generic [ref=e71]:
+        - generic:
+          - img "iPhone Frame"
+        - generic [ref=e72]:
+          - img "Map Layer" [ref=e74]
+          - generic:
+            - generic: 9:41
+            - generic:
+              - img
+          - generic [ref=e81]:
+            - generic [ref=e82]:
+              - generic [ref=e84]: My basement in Austin is flooded! I need a plumber fast.
+              - generic [ref=e86]: Okay, so you need a plumber at your location urgently?
+            - generic [ref=e87]:
+              - textbox "Ask Genie" [ref=e88]: Yes, it's rising fast!
+              - img [ref=e90] [cursor=pointer]
+              - img [ref=e93]
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - heading "Made for humans. Built on trust." [level=2] [ref=e100]:
+          - text: Made for humans.
+          - text: Built on trust.
+        - generic [ref=e101]:
+          - img [ref=e102]
+          - generic [ref=e104]:
+            - text: Verified Professionals
+            - generic [ref=e105]: Instant Connection
+      - generic [ref=e107]:
+        - generic [ref=e110]:
+          - img [ref=e112]
+          - heading "Just Ask." [level=3] [ref=e114]
+          - paragraph [ref=e115]: Say what you need — we’ll handle the rest.
+        - generic [ref=e116]:
+          - generic [ref=e118]: U
+          - generic [ref=e120]: "\"I need a plumber for a burst pipe. Urgent.\""
+    - generic [ref=e133]:
+      - generic [ref=e134]: How it Works
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - generic [ref=e137]: "01"
+          - img [ref=e139]
+          - heading "You Ask" [level=3] [ref=e141]
+          - paragraph [ref=e142]: Tell us what you need in plain English.
+        - generic [ref=e143]:
+          - generic [ref=e144]: "02"
+          - img [ref=e146]
+          - heading "We Match" [level=3] [ref=e148]
+          - paragraph [ref=e149]: Our AI instantly finds the perfect local expert.
+        - generic [ref=e150]:
+          - generic [ref=e151]: "03"
+          - img [ref=e153]
+          - heading "Pro Arrives" [level=3] [ref=e155]
+          - paragraph [ref=e156]: Verified help is on the way in minutes.
+    - contentinfo [ref=e157]:
+      - generic [ref=e158]:
+        - generic [ref=e159]:
+          - heading "Make a wish. Get it done." [level=2] [ref=e160]:
+            - text: Make a wish.
+            - text: Get it done.
+          - button "Get Started" [ref=e161]
+        - generic [ref=e162]:
+          - heading "Ready to get help in minutes?" [level=2] [ref=e163]:
+            - text: Ready to get
+            - text: help in minutes?
+          - button "Try Now" [ref=e165]:
+            - text: Try Now
+            - img [ref=e166]
+        - generic [ref=e168]:
+          - generic [ref=e169]:
+            - img "Logo" [ref=e171]
+            - generic [ref=e172]:
+              - generic [ref=e173]: Find My Genie
+              - generic [ref=e174]: Let AI call-around for you.
+          - generic [ref=e175]:
+            - generic [ref=e176]: Explore
+            - list [ref=e177]:
+              - listitem [ref=e178]:
+                - link "The Problem" [ref=e179] [cursor=pointer]:
+                  - /url: /#problem
+                  - text: The Problem
+                  - img [ref=e180]
+              - listitem [ref=e182]:
+                - link "Live Demo" [ref=e183] [cursor=pointer]:
+                  - /url: /#demo
+                  - text: Live Demo
+                  - img [ref=e184]
+              - listitem [ref=e186]:
+                - link "How It Works" [ref=e187] [cursor=pointer]:
+                  - /url: /#how-it-works
+                  - text: How It Works
+                  - img [ref=e188]
+          - generic [ref=e190]:
+            - generic [ref=e191]: Company
+            - list [ref=e192]:
+              - listitem [ref=e193]:
+                - link "About" [ref=e194] [cursor=pointer]:
+                  - /url: /about
+                  - text: About
+                  - img [ref=e195]
+              - listitem [ref=e197]:
+                - link "Legal" [ref=e198] [cursor=pointer]:
+                  - /url: /legal
+                  - text: Legal
+                  - img [ref=e199]
+              - listitem [ref=e201]:
+                - link "Contact" [ref=e202] [cursor=pointer]:
+                  - /url: mailto:info@findmygenie.com
+                  - text: Contact
+                  - img [ref=e203]
+          - generic [ref=e205]:
+            - generic [ref=e206]: Follow Us
+            - generic [ref=e207]:
+              - link "Follow us on Twitter" [ref=e208] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e209]
+              - link "Follow us on Instagram" [ref=e211] [cursor=pointer]:
+                - /url: https://www.instagram.com/findmygenie?igsh=YmV3cTA1MnE2cjB0
+                - img [ref=e212]
+              - link "Follow us on LinkedIn" [ref=e214] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/find-my-genie/?viewAsMember=true
+                - img [ref=e215]
+        - generic [ref=e217]:
+          - generic [ref=e218]: © 2026 Find My Genie Inc. All rights reserved.
+          - generic [ref=e219]: Built with love and a little bit of magic.
+    - generic [ref=e222]:
+      - button "Close form" [ref=e223]:
+        - img [ref=e224]
+      - generic [ref=e226]:
+        - generic [ref=e227]:
+          - heading "Join as a Vendor" [level=3] [ref=e228]
+          - paragraph [ref=e229]: Connect with high-intent leads instantly. Sign up to get notified when we launch.
+        - generic [ref=e230]:
+          - textbox "Full Name" [active] [ref=e232]: Vendor User
+          - textbox "Email Address" [ref=e234]
+          - textbox "Phone Number" [ref=e236]
+          - button "Join Waitlist" [ref=e237]
+  - region "Notifications alt+T"
+```

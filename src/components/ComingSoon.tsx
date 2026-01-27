@@ -32,7 +32,7 @@ export default function ComingSoon() {
                     Back to Home
                 </button>
             </motion.div>
-            <div className="absolute bottom-8 left-0 right-0 text-center text-white/30 text-sm">
+            <div className="absolute bottom-8 left-0 right-0 text-center text-white/50 text-sm">
                 <p>© {new Date().getFullYear()} Find My Genie Inc. All rights reserved.</p>
             </div>
         </div>

@@ -106,8 +106,8 @@ export default function InteractiveDemo() {
                     <div className="relative mx-auto max-w-[360px] scale-[0.85] origin-center">
 
                         {/* Frame (Top Layer) */}
-                        <div className="relative z-30 pointer-events-none">
-                            <img src="/iphone_mockup.png" alt="iPhone Frame" className="w-full h-auto drop-shadow-2xl" />
+                        <div className="relative z-30 pointer-events-none" data-testid="demo-iphone-frame">
+                            <img src="/iphone_mockup.webp" alt="iPhone Frame" width="360" height="741" className="w-full h-auto drop-shadow-2xl" />
                         </div>
 
                         {/* Screen Content (Behind Frame) */}
@@ -116,8 +116,10 @@ export default function InteractiveDemo() {
                             {/* Map Background Layer - Always Visible */}
                             <div className="absolute inset-0 z-0 bg-zinc-900">
                                 <img
-                                    src="/map_layer.png"
+                                    src="/map_layer.webp"
                                     alt="Map Layer"
+                                    width="600"
+                                    height="1200"
                                     className="w-full h-full object-cover opacity-60 grayscale-[0.2] scale-[1.75]"
                                 />
 
