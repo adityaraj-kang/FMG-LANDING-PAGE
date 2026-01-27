@@ -39,7 +39,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
     return (
         <section
             onMouseMove={handleMouseMove}
-            className="relative min-h-[100dvh] lg:min-h-[800px] flex items-center bg-background overflow-hidden font-sans pt-36 pb-20 lg:py-0"
+            className="relative min-h-[100dvh] lg:min-h-[800px] flex items-center bg-background overflow-hidden font-sans pt-52 pb-20 lg:py-0"
         >
             {/* Aurora Ambient Background */}
             <motion.div
@@ -54,7 +54,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
             <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
 
                 {/* Left: Content */}
-                <div className="lg:col-span-7">
+                <div className="lg:col-span-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                 </div>
 
                 {/* Right: "Apple x Uber x GPT" Interface */}
-                <div className="lg:col-span-5 flex justify-center lg:justify-end mt-12 lg:mt-0">
+                <div className="lg:col-span-4 flex justify-center lg:justify-end mt-12 lg:mt-0">
                     <div className="relative w-full max-w-[320px] sm:max-w-md h-[400px] flex items-center justify-center">
 
                         {/* Static Ambient Halo - Always visible to create focus */}
