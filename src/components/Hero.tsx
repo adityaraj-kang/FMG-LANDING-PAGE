@@ -187,18 +187,17 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                         {/* Dynamic Island Container */}
                         <motion.div
                             layout
-                            initial={{ width: 100, height: 100, borderRadius: 50 }}
+                            initial={{ width: 100, height: 100, borderRadius: 50, clipPath: "inset(0% 0% 0% 0% round 50px)" }}
                             animate={{
                                 width: status === 'connected' ? 340 : 100,
                                 height: status === 'connected' ? 500 : 100,
-                                borderRadius: status === 'connected' ? 40 : 50
+                                borderRadius: status === 'connected' ? 40 : 50,
+                                clipPath: status === 'connected' ? "inset(0% 0% 0% 0% round 40px)" : "inset(0% 0% 0% 0% round 50px)"
                             }}
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
                             className="bg-black/40 backdrop-blur-3xl border border-white/10 shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center relative overflow-hidden z-20 group hover:border-white/20 transition-colors max-w-[90vw] isolate"
                             style={{
-                                transform: 'translateZ(0)',
-                                WebkitBackfaceVisibility: 'hidden',
-                                backfaceVisibility: 'hidden'
+                                transform: 'translateZ(0)'
                             }}
                         >
                             {/* Fluid Ambient Light - Inside Container */}
