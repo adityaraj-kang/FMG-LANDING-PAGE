@@ -8,14 +8,6 @@ import { useState, useCallback, useEffect } from 'react';
 const FluidOrb = ({ active }: { active: boolean }) => {
     return (
         <div className="relative w-full h-full flex items-center justify-center">
-            {/* Noise Texture Overlay to prevent branding */}
-            <div
-                className="absolute inset-0 z-50 pointer-events-none opacity-[0.08] mix-blend-overlay"
-                style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-                }}
-            />
-
             {/* Layer 1: Deep Core (Purple/Blue) - Slow, grounding motion */}
             <motion.div
                 animate={active ? {
@@ -29,10 +21,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute w-[220px] h-[220px] rounded-full blur-[60px] mix-blend-screen"
-                style={{
-                    background: 'radial-gradient(circle, rgba(79, 70, 229, 0.6) 0%, transparent 70%)',
-                    transform: 'translate3d(0,0,0)',
-                }}
+                style={{ background: 'radial-gradient(circle, rgba(79, 70, 229, 0.6) 0%, transparent 70%)' }}
             />
 
             {/* Layer 2: Primary Energy (Orange/Red) - Faster, main character */}
@@ -48,10 +37,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                 }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute w-[187px] h-[187px] rounded-full blur-[50px] mix-blend-screen"
-                style={{
-                    background: 'radial-gradient(circle, rgba(249, 115, 22, 0.8) 0%, transparent 70%)',
-                    transform: 'translate3d(0,0,0)',
-                }}
+                style={{ background: 'radial-gradient(circle, rgba(249, 115, 22, 0.8) 0%, transparent 70%)' }}
             />
 
             {/* Layer 3: Highlights (White/Cyan) - Fast, nervous energy, gives it "spirit" */}
@@ -67,10 +53,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute w-[148px] h-[148px] rounded-full blur-[40px] mix-blend-overlay"
-                style={{
-                    background: 'radial-gradient(circle, rgba(103, 232, 249, 0.4) 0%, transparent 70%)',
-                    transform: 'translate3d(0,0,0)',
-                }}
+                style={{ background: 'radial-gradient(circle, rgba(103, 232, 249, 0.4) 0%, transparent 70%)' }}
             />
 
             {/* Layer 4: Reactive Glow Pulse */}
@@ -83,10 +66,7 @@ const FluidOrb = ({ active }: { active: boolean }) => {
                 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute w-[297px] h-[297px] rounded-full blur-[80px]"
-                style={{
-                    background: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)',
-                    transform: 'translate3d(0,0,0)',
-                }}
+                style={{ background: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)' }}
             />
         </div>
     );
@@ -156,15 +136,6 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
 
 
 
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-    const handleMouseMove = useCallback((e: React.MouseEvent) => {
-        const { clientX, clientY } = e;
-        const x = (clientX / window.innerWidth - 0.5) * 20; // -10 to 10
-        const y = (clientY / window.innerHeight - 0.5) * 20; // -10 to 10
-        setMousePosition({ x, y });
-    }, []);
-
     useEffect(() => {
         if (status !== 'idle') return;
         const interval = setInterval(() => {
@@ -174,16 +145,9 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
     }, [status]);
 
     return (
-        <section
-            onMouseMove={handleMouseMove}
-            className="relative min-h-[100dvh] lg:h-screen lg:min-h-[800px] flex items-center bg-background overflow-hidden font-sans pt-36 pb-20 lg:py-0"
-        >
+        <section className="relative min-h-[100dvh] lg:h-screen lg:min-h-[800px] flex items-center bg-background overflow-hidden font-sans pt-36 pb-20 lg:py-0">
             {/* Aurora Ambient Background */}
-            <motion.div
-                animate={{ x: mousePosition.x * -1, y: mousePosition.y * -1 }}
-                transition={{ type: "spring", stiffness: 50, damping: 20 }}
-                className="absolute inset-0 z-0 aurora-bg opacity-40"
-            ></motion.div>
+            <div className="absolute inset-0 z-0 aurora-bg opacity-40"></div>
 
 
 
@@ -197,26 +161,9 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
 
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-semibold text-white mb-8 tracking-tight leading-[1.1] overflow-hidden">
-                            {"Let AI call-around".split(" ").map((word, i) => (
-                                <motion.span
-                                    key={i}
-                                    initial={{ y: 50, opacity: 0 }}
-                                    animate={{ y: 0, opacity: 1 }}
-                                    transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                                    className="inline-block mr-4"
-                                >
-                                    {word}
-                                </motion.span>
-                            ))}<br />
-                            <motion.span
-                                initial={{ y: 50, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                                className="text-white/30 inline-block"
-                            >
-                                for your needs.
-                            </motion.span>
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-semibold text-white mb-8 tracking-tight leading-[1.1]">
+                            Let AI call-around <br />
+                            <span className="text-white/30">for your needs.</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-white/60 mb-12 max-w-lg leading-relaxed font-normal tracking-tight">
                             AI agent who calls 20+ places near you to find availability, quote and also negotiate with multiple vendors simultaneously to get you the best deal.
@@ -244,24 +191,20 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                         {/* Dynamic Island Container */}
                         <motion.div
                             layout
-                            initial={{ width: 100, height: 100, borderRadius: 50 }}
+                            initial={{ width: 100, height: 100, borderRadius: 50, clipPath: "inset(0% 0% 0% 0% round 50px)" }}
                             animate={{
                                 width: status === 'connected' ? 340 : 100,
                                 height: status === 'connected' ? 500 : 100,
                                 borderRadius: status === 'connected' ? 40 : 50,
+                                clipPath: status === 'connected' ? "inset(0% 0% 0% 0% round 40px)" : "inset(0% 0% 0% 0% round 50px)"
                             }}
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
                             className="bg-black/40 backdrop-blur-3xl shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center relative overflow-hidden z-20 group hover:border-white/20 transition-colors max-w-[90vw] isolate antialiased"
                             style={{
-                                transform: 'translate3d(0, 0, 0)',
-                                willChange: 'transform, width, height, border-radius',
+                                transform: 'translateZ(0)',
+                                willChange: 'transform, width, height, border-radius, clip-path',
                                 border: '1px solid rgba(255,255,255,0.1)',
-                                boxShadow: '0 0 0 1px rgba(0,0,0,0)',
-                                backfaceVisibility: 'hidden',
-                                WebkitBackfaceVisibility: 'hidden',
-                                WebkitPerspective: 1000,
-                                perspective: 1000,
-                                WebkitFontSmoothing: 'antialiased',
+                                boxShadow: '0 0 0 1px rgba(0,0,0,0)'
                             }}
                         >
                             {/* Fluid Ambient Light - Inside Container */}
