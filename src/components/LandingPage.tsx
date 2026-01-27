@@ -1,5 +1,4 @@
 import { useState, Suspense, lazy } from 'react';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 
@@ -18,13 +17,11 @@ export default function LandingPage() {
 
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-primary/30 overflow-x-hidden font-body">
-            <Helmet>
-                <title>Find My Genie - Let AI call-around for your needs</title>
-                <meta name="description" content="Stop calling, start living. Find My Genie uses AI to call vendors, negotiate deals, and book appointments for you." />
-                <meta property="og:title" content="Find My Genie" />
-                <meta property="og:description" content="AI-powered personal assistant calling service." />
-                <meta name="twitter:card" content="summary_large_image" />
-            </Helmet>
+            <title>Find My Genie - Let AI call-around for your needs</title>
+            <meta name="description" content="Stop calling, start living. Find My Genie uses AI to call vendors, negotiate deals, and book appointments for you." />
+            <meta property="og:title" content="Find My Genie" />
+            <meta property="og:description" content="AI-powered personal assistant calling service." />
+            <meta name="twitter:card" content="summary_large_image" />
             <Navbar
                 onOpenWaitlist={() => setIsWaitlistOpen(true)}
                 onOpenVendorWaitlist={() => setIsVendorWaitlistOpen(true)}

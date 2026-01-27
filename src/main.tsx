@@ -2,7 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { PostHogProvider } from 'posthog-js/react'
-import { HelmetProvider } from 'react-helmet-async'
 import { Toaster } from 'sonner'
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './index.css'
@@ -20,12 +19,10 @@ createRoot(document.getElementById('root')!).render(
           debug: import.meta.env.MODE === 'development',
         }}
       >
-        <HelmetProvider>
-          <BrowserRouter>
-            <App />
-            <Toaster position="top-center" richColors theme="dark" />
-          </BrowserRouter>
-        </HelmetProvider>
+        <BrowserRouter>
+          <App />
+          <Toaster position="top-center" richColors theme="dark" />
+        </BrowserRouter>
       </PostHogProvider>
     </ErrorBoundary>
   </StrictMode>,
