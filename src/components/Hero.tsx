@@ -195,7 +195,6 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                             }}
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
                             className="bg-black/40 backdrop-blur-3xl border border-white/10 shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center relative overflow-hidden z-20 group hover:border-white/20 transition-colors max-w-[90vw]"
-                            style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}
                         >
                             {/* Fluid Ambient Light - Inside Container */}
                             <div className="absolute inset-0 pointer-events-none">
