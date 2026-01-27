@@ -17,9 +17,6 @@ createRoot(document.getElementById('root')!).render(
           defaults: '2025-05-24',
           capture_exceptions: true,
           debug: import.meta.env.MODE === 'development',
-          disable_session_recording: true,
-          disable_surveys: true,
-          autocapture: false,
         }}
       >
         <BrowserRouter>
