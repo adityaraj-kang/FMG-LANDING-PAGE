@@ -7,6 +7,9 @@ declare namespace JSX {
 interface ImportMetaEnv {
     readonly VITE_ELEVENLABS_AGENT_ID: string
     readonly VITE_WAITLIST_SCRIPT_URL: string
+    readonly VITE_VENDOR_SCRIPT_URL: string
+    readonly VITE_PUBLIC_POSTHOG_KEY: string
+    readonly VITE_PUBLIC_POSTHOG_HOST: string
 }
 
 interface ImportMeta {
