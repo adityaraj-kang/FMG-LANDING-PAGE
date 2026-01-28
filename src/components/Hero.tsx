@@ -39,7 +39,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
     return (
         <section
             onMouseMove={handleMouseMove}
-            className="relative min-h-[100dvh] lg:min-h-[800px] flex items-center bg-background overflow-hidden font-sans pt-36 pb-20 lg:py-0"
+            className="relative min-h-[100dvh] lg:min-h-[800px] flex items-center bg-background overflow-hidden font-sans pt-36 pb-32 lg:py-0"
         >
             {/* Aurora Ambient Background */}
             <motion.div
