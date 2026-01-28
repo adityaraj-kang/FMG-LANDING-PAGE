@@ -51,7 +51,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
 
 
 
-            <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center lg:pt-20">
 
                 {/* Left: Content */}
                 <div className="lg:col-span-7">
@@ -67,7 +67,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist: () => void })
                                 for your needs.
                             </span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-lg leading-relaxed font-normal tracking-tight">
+                        <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-lg leading-relaxed font-normal tracking-tight">
                             AI agent who calls 20+ places near you to find availability, quote and also negotiate with multiple vendors simultaneously to get you the best deal.
                         </p>
                         {/* GPT-Style Prompt Input */}
